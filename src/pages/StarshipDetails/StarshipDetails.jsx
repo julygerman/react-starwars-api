@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { getStarShipsDetails } from '../../services/api-calls'
+import { Link } from 'react-router-dom'
 
 class StarshipDetails extends Component {
     state = { 
@@ -27,7 +28,15 @@ class StarshipDetails extends Component {
             </>
             :
             <p>Loading Starship details ...</p>
-                }   
+        }   
+            <Link
+            to={{
+                pathname: '/'
+            }}
+            >
+                <p>Return</p>
+            
+            </Link>
             </div>
          );
     }
