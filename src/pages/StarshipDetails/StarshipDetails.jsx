@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getStarShipsDetails } from '../../services/api-calls'
 import { Link } from 'react-router-dom'
+import Pilots from '../../components/Pilots/Pilots'
 
 class StarshipDetails extends Component {
     state = { 
@@ -25,19 +26,13 @@ class StarshipDetails extends Component {
                 <h4>Length: {starshipDetails.length}</h4>
                 <h4>Crew: {starshipDetails.crew}</h4>
                 <h4>Class: {starshipDetails.starship_class}</h4>
+                <Pilots pilots={starshipDetails.pilots}/>
             </>
             :
             <p>Loading Starship details ...</p>
         }   
-            <Link
-            to={{
-                pathname: '/'
-            }}
-            >
-                <btn>Return</btn>
-            
-            </Link>
-            </div>
+
+            <Link to={{pathname: '/'}}><button>Return</button></Link></div>
          );
     }
 }
